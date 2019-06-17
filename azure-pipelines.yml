@@ -27,7 +27,7 @@ steps:
   inputs:
     command: buildAndPush
     containerRegistry: bplab-azure-container-reg
-    repository: contosoRepository
+    repository: azure_devops_python_flask
     tags: 0.1
 
 - script: echo Hello, world!
