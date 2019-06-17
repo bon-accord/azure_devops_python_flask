@@ -19,7 +19,7 @@ steps:
   displayName: Login to ACR
   inputs:
     command: login
-    containerRegistry: bplabacr
+    containerRegistry: bon-accord-azure-subscription
 
 #- script: docker build -t $(imageName) . 
 - task: Docker@2
