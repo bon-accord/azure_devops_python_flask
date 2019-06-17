@@ -26,7 +26,7 @@ steps:
   displayName: Build and Push
   inputs:
     command: buildAndPush
-    containerRegistry: bplabacr
+    containerRegistry: bon-accord-azure-subscription
     repository: contosoRepository
     tags: 0.1
 
