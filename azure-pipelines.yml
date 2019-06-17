@@ -43,4 +43,10 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'repofiles'
     publishLocation: 'Container'
-
+    
+- task: DownloadBuildArtifacts@0
+  inputs:
+    buildType: 'current'
+    downloadType: 'specific'
+    itemPattern: '*.yaml'
+    downloadPath: '$(System.ArtifactsDirectory)'
