@@ -70,7 +70,7 @@ steps:
   continueOnError: true
 
 - script: |
-    sonar-scanner \
+    sonar-scanner-3.3.0.1492-linux*/bin/sonar-scanner \
       -Dsonar.projectKey=sonaruser-proj01 \
       -Dsonar.sources=. \
       -Dsonar.host.url=https://sonarqube-azureappservice4089.azurewebsites.net \
