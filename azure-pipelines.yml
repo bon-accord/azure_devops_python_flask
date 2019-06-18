@@ -57,7 +57,7 @@ steps:
     ArtifactName: 'repofiles'
     publishLocation: 'Container'
 
-- task: SonarQubeAnalyze@4
+#- task: SonarQubeAnalyze@4
 
 - script: |
     sonar-scanner \
