@@ -49,7 +49,7 @@ spec:
       containers:
       - name: flask-app
         #image: bplab-azure-container-reg/azure_devops_python_flask/azure_devops_python_flask:0.1
-        image: azure_devops_python_flask:0.1
+        image: azure_devops_python_flask/azure_devops_python_flask:0.1
         ports:
         - containerPort: 5000
 kind: Service
