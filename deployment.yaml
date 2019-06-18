@@ -1,35 +1,57 @@
-kind: Deployment
+# kind: Deployment
+# apiVersion: apps/v1
+# metadata:
+#   name: flask-app
+#   labels:
+#     name: flask-app
+# spec:
+#   replicas: 2
+#   selector:
+#     matchLabels:
+#       name: flask-app
+#   template:
+#     metadata:
+#       name: flask-app
+#       labels:
+#         name: flask-app
+#     spec:
+#       containers:
+#         - name: flask-app
+#           #image: bplab-azure-container-reg/azure_devops_python_flask/azure_devops_python_flask:0.1
+#           #image: azure_devops_python_flask/azure_devops_python_flask:0.1
+#           image: azure_devops_python_flask:0.1
+#           ports:
+#             - containerPort: 5000
+#           resources:
+#             requests:
+#               memory: 256Mi
+#             limits:
+#               memory: 512Mi
+#           env:
+#             - name: DEBUG_MODE
+#               value: "1"
 apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: flask-app
+  name: flask-app-deployment
   labels:
-    name: flask-app
+    app: flask-app
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
-      name: flask-app
+      app: flask-app
   template:
     metadata:
-      name: flask-app
       labels:
-        name: flask-app
+        app: flask-app
     spec:
       containers:
-        - name: flask-app
-          #image: bplab-azure-container-reg/azure_devops_python_flask/azure_devops_python_flask:0.1
-          #image: azure_devops_python_flask/azure_devops_python_flask:0.1
-          image: azure_devops_python_flask:0.1
-          ports:
-            - containerPort: 5000
-          resources:
-            requests:
-              memory: 256Mi
-            limits:
-              memory: 512Mi
-          env:
-            - name: DEBUG_MODE
-              value: "1"
+      - name: flask-app
+        #image: bplab-azure-container-reg/azure_devops_python_flask/azure_devops_python_flask:0.1
+        image: azure_devops_python_flask:0.1
+        ports:
+        - containerPort: 5000
 kind: Service
 apiVersion: v1
 metadata:
