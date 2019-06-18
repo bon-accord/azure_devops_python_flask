@@ -58,7 +58,7 @@ steps:
     publishLocation: 'Container'
 
 #- task: SonarQubeAnalyze@4
-- 
+
 - script: wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.3.0.1492-linux.zip
   displayName: Get sonar-scanner Binary
 
