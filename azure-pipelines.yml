@@ -59,6 +59,14 @@ steps:
 
 - task: SonarQubeAnalyze@4
 
+- script: |
+    sonar-scanner \
+      -Dsonar.projectKey=sonaruser-proj01 \
+      -Dsonar.sources=. \
+      -Dsonar.host.url=https://sonarqube-azureappservice4089.azurewebsites.net \
+      -Dsonar.login=419b0f760862800f635776f1484fd1dd0dcb0c6e
+  displayName: Sonar Analysis
+  
 - task: SonarQubePublish@4
   inputs:
     pollingTimeoutSec: '300'
